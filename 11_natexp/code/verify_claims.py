@@ -121,6 +121,8 @@ class R:
         self.lmb = csv("long_episode_mobility.csv").set_index("episode")
         self.lsc = csv("long_station_check.csv")
         self.lmt = csv("limits.csv").set_index("scenario")
+        pl = csv("long_episode_placebos.csv")
+        self.lplac = 100 * (np.exp(pl[pl.outcome == "PM25"].b) - 1)    # placebo estimates, percent
 
     def le(self, analysis, outcome, field):
         q = self.leid[(self.leid.analysis == analysis) & (self.leid.outcome == outcome)]
@@ -397,6 +399,8 @@ def claims(r):
          lp("2015 nationwide blockade", "PM25", "hi_cal_pct"), int(lp("2015 nationwide blockade", "PM25", "n_days")),
          A(lp("2018 road-safety protests", "PM25", "b_pct")), A(lp("2018 road-safety protests", "PM25", "lo_cal_pct")),
          A(lp("2018 road-safety protests", "PM25", "hi_cal_pct"))])
+    add("placebo spread", "Three features of these estimates limit what they can show.",
+        [r.lplac.min(), r.lplac.max(), len(r.lplac), int((r.lplac.abs() > 20).sum())])
 
     # ---------------------------------------------------------------- results: weekly (Part B of the supplement)
     EVE, AFT = "evening 18-23", "afternoon 12-17"

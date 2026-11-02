@@ -42,9 +42,11 @@ Data and code for the manuscript
 > shutdowns and blockades reveal about the limits of city-scale air quality measures.*
 > Manuscript prepared for submission to Urban Climate, 2026.
 >
-> Release v1.0 is the version the manuscript describes: the Eid event design on the 24 Eids
+> Release v1.1 is the version the manuscript describes: the Eid event design on the 24 Eids
 > of 2013-2024, seven prolonged disruptions with placebo years, the year-round ceiling, and
-> the weekly rest-day analysis of 2019-2024 that appears in Part B of the supplement.
+> the weekly rest-day analysis of 2019-2024 that appears in Part B of the supplement. It has
+> the analysis code and results of v1.0, with a contemporaneous press source for every Eid
+> date of 2019-2024 in the calendar.
 
 Department of Electrical and Electronic Engineering, BSRM School of Engineering, BRAC
 University, Dhaka, Bangladesh. Correspondence: Mirza Rasheduzzaman,
